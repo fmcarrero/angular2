@@ -10,12 +10,11 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = require("@angular/core");
 var hero_service_1 = require("./hero.service");
-var src_1 = require("@angular/router/src");
+var router_1 = require("@angular/router");
 var HeroesComponent = (function () {
     function HeroesComponent(heroService, router) {
         this.heroService = heroService;
         this.router = router;
-        this.title = 'Tour of Heroues';
     }
     HeroesComponent.prototype.onSelect = function (hero) {
         this.selectedHero = hero;
@@ -34,13 +33,12 @@ var HeroesComponent = (function () {
 }());
 HeroesComponent = __decorate([
     core_1.Component({
-        providers: [hero_service_1.HeroService],
         selector: 'my-heroes',
         templateUrl: './heroes.component.html',
         styleUrls: ['./heroes.component.css']
     }),
     __metadata("design:paramtypes", [hero_service_1.HeroService,
-        src_1.Router])
+        router_1.Router])
 ], HeroesComponent);
 exports.HeroesComponent = HeroesComponent;
 //# sourceMappingURL=heroes.component.js.map
