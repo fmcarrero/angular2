@@ -8,6 +8,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
+Object.defineProperty(exports, "__esModule", { value: true });
 require("rxjs/add/operator/switchMap");
 var core_1 = require("@angular/core");
 var router_1 = require("@angular/router");
@@ -25,13 +26,13 @@ var HeroDetailComponent = (function () {
             .switchMap(function (params) { return _this.heroService.getHero(+params.get('id')); })
             .subscribe(function (hero) { return _this.hero = hero; });
     };
-    HeroDetailComponent.prototype.goBack = function () {
-        this.location.back();
-    };
     HeroDetailComponent.prototype.save = function () {
         var _this = this;
         this.heroService.update(this.hero)
             .then(function () { return _this.goBack(); });
+    };
+    HeroDetailComponent.prototype.goBack = function () {
+        this.location.back();
     };
     return HeroDetailComponent;
 }());
